@@ -19,6 +19,7 @@
             --accent-cyan: #00e5ff;
             --accent-orange: #ff6a00;
             --accent-red: #ff2a2a;
+            --accent-purple: #b44aff;
             --radius: 16px;
         }
 
@@ -148,7 +149,10 @@
         }
 
         @media (min-width: 768px) {
-            .projects { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .projects { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        }
+        @media (min-width: 1024px) {
+            .projects { grid-template-columns: repeat(4, 1fr); gap: 24px; }
         }
 
         /* ── Card ── */
@@ -182,6 +186,7 @@
         .card[data-accent="cyan"]:hover { box-shadow: 0 24px 80px -12px rgba(0,229,255,0.15); }
         .card[data-accent="orange"]:hover { box-shadow: 0 24px 80px -12px rgba(255,106,0,0.15); }
         .card[data-accent="red"]:hover { box-shadow: 0 24px 80px -12px rgba(255,42,42,0.15); }
+        .card[data-accent="purple"]:hover { box-shadow: 0 24px 80px -12px rgba(180,74,255,0.15); }
 
         /* Hover shimmer */
         .card::before {
@@ -201,6 +206,9 @@
         }
         .card[data-accent="red"]::before {
             background: radial-gradient(ellipse at var(--mx, 50%) var(--my, 0%), rgba(255,42,42,0.08) 0%, transparent 60%);
+        }
+        .card[data-accent="purple"]::before {
+            background: radial-gradient(ellipse at var(--mx, 50%) var(--my, 0%), rgba(180,74,255,0.08) 0%, transparent 60%);
         }
         .card:hover::before { opacity: 1; }
 
@@ -244,6 +252,7 @@
         .card[data-accent="cyan"] .card__tag { color: var(--accent-cyan); }
         .card[data-accent="orange"] .card__tag { color: var(--accent-orange); }
         .card[data-accent="red"] .card__tag { color: var(--accent-red); }
+        .card[data-accent="purple"] .card__tag { color: var(--accent-purple); }
 
         .card__name {
             font-family: 'Bebas Neue', cursive;
@@ -275,6 +284,7 @@
         .card[data-accent="cyan"] .card__cta { color: var(--accent-cyan); }
         .card[data-accent="orange"] .card__cta { color: var(--accent-orange); }
         .card[data-accent="red"] .card__cta { color: var(--accent-red); }
+        .card[data-accent="purple"] .card__cta { color: var(--accent-purple); }
 
         .card__cta svg {
             width: 16px; height: 16px;
@@ -357,6 +367,18 @@
                 <span class="card__tag">Interactive / History</span>
                 <h2 class="card__name">Rehistory</h2>
                 <p class="card__desc">Relive history's most pivotal moments through an immersive, cinematic interactive timeline.</p>
+                <span class="card__cta">Launch Experience <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+        <a class="card" data-accent="purple" href="https://snozilla.github.io/swarm/" target="_blank" rel="noopener">
+            <div class="card__img-wrap">
+                <img class="card__img" src="og-swarm.webp" alt="Swarm Command — drone fleet in a lightning storm" loading="eager">
+            </div>
+            <div class="card__body">
+                <span class="card__tag">Simulation / Strategy</span>
+                <h2 class="card__name">Swarm Command</h2>
+                <p class="card__desc">Command a drone swarm in a next-generation air dominance simulation. Coordinate, deploy, and conquer.</p>
                 <span class="card__cta">Launch Experience <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
             </div>
         </a>
